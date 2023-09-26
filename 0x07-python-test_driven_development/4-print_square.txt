@@ -1,49 +1,57 @@
+The ``4-print_square`` module
+============================
 
-========================
-explains the use if 4-print_square.py
+Using ``print_square``
+---------------------
 
-=======================
+Importing function from the module:
 
-this module entails a function that prints the square using # character
+    >>> print_square = __import__('4-print_square').print_square
 
-the size parameter of the square represenst the side
+Printing a square with a size of 5
 
->>> print_square = __import_('4-print_square').print_square
-sucess
+    >>> print_square(5)
+    #####
+    #####
+    #####
+    #####
+    #####
 
->>> print_square(3)
-###
-###
-###
+Passing 0 as the size of the square
 
-no arguments passed
+    >>> print_square(0)
 
->>> print_square()
-Traceback (most recent call last):
-TypeError: the function requires a positional argument 
+Passing a float number as the size of the square
 
-if zero is passed
+    >>> print_square(1.0)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: size must be an integer
 
->>> print_square(0)
+Passing a string as the size of the square
 
-if 1 is passed:
->>> print_square(1)
-#
+    >>> print_square('2')
+    Traceback (most recent call last):
+    	      ...
+    TypeError: size must be an integer
 
-negative number is passed
->>> print_square(-4)
-Traceback (most recent call last):
-TypeError: size must be >= 0
+Passing a negative number as the size of the square
 
-string is passed
+    >>> print_square(-2)
+    Traceback (most recent call last):
+    	     ...
+    ValueError: size must be >= 0
 
->>> print_square("string")
-Traceback (most recent call last):
-TypeError: size must be an integer
+Passing None as the size of the square
 
+    >>> print_square(None)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: size must be an integer
 
-None is passed
+Missing argument
 
->>> print_square(None)
-Traceback (most recent call last):
-TypeError: size must be an integer
+   >>> print_square()
+   Traceback (most recent call last):
+   	     ...
+   TypeError: print_square() missing 1 required positional argument: 'size'
